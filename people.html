@@ -9,8 +9,8 @@
   <meta name="supported-color-schemes" content="light">
   <title>Team | IMPACT Lab</title>
   <link rel="icon" href="assets/favicon-impact.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/style.css?v=20260906-linkedin-icon-v1">
-  <script src="assets/js/site.js?v=20260906-linkedin-icon-v1" defer></script>
+  <link rel="stylesheet" href="assets/css/style.css?v=20260906-team-tabs-v1">
+  <script src="assets/js/site.js?v=20260906-team-tabs-v1" defer></script>
 </head>
 <body>
   <div data-site-header></div>
@@ -19,10 +19,15 @@
       <div class="container">
         <div>
           <h1>Meet the IMPACT research team</h1>
+          <div class="team-tabs" role="tablist" aria-label="Team groups">
+            <button class="team-tab active" id="members-tab" type="button" role="tab" aria-selected="true" aria-controls="members-panel" data-team-tab="members">Members</button>
+            <button class="team-tab" id="alumni-tab" type="button" role="tab" aria-selected="false" aria-controls="alumni-panel" data-team-tab="alumni">Alumni</button>
+          </div>
         </div>
       </div>
     </section>
 
+    <div class="team-panel" id="members-panel" role="tabpanel" aria-labelledby="members-tab" data-team-panel="members">
     <section class="section">
       <div class="container pi-block team-profile">
         <div class="pi-photo" data-reveal>
@@ -136,8 +141,9 @@
         </div>
       </div>
     </section>
+    </div>
 
-    <section class="section section-sand">
+    <section class="section section-sand team-panel" id="alumni-panel" role="tabpanel" aria-labelledby="alumni-tab" data-team-panel="alumni" hidden>
       <div class="container">
         <div class="people-heading" data-reveal>
           <h2>Alumni</h2>

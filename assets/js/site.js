@@ -144,6 +144,45 @@ document.querySelectorAll("[data-filter]").forEach((button) => {
   });
 });
 
+const teamTabs = [...document.querySelectorAll("[data-team-tab]")];
+const teamPanels = [...document.querySelectorAll("[data-team-panel]")];
+
+if (teamTabs.length && teamPanels.length) {
+  const validTeamTabs = new Set(teamTabs.map((tab) => tab.dataset.teamTab));
+
+  const activateTeamTab = (name, updateUrl = false) => {
+    const activeName = validTeamTabs.has(name) ? name : "members";
+
+    teamTabs.forEach((tab) => {
+      const active = tab.dataset.teamTab === activeName;
+      tab.classList.toggle("active", active);
+      tab.setAttribute("aria-selected", String(active));
+      tab.tabIndex = active ? 0 : -1;
+    });
+
+    teamPanels.forEach((panel) => {
+      panel.hidden = panel.dataset.teamPanel !== activeName;
+    });
+
+    if (updateUrl) history.replaceState(null, "", `#${activeName}`);
+  };
+
+  teamTabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => activateTeamTab(tab.dataset.teamTab, true));
+    tab.addEventListener("keydown", (event) => {
+      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+      event.preventDefault();
+      const direction = event.key === "ArrowRight" ? 1 : -1;
+      const nextTab = teamTabs[(index + direction + teamTabs.length) % teamTabs.length];
+      nextTab.focus();
+      activateTeamTab(nextTab.dataset.teamTab, true);
+    });
+  });
+
+  activateTeamTab(window.location.hash.slice(1));
+  window.addEventListener("hashchange", () => activateTeamTab(window.location.hash.slice(1)));
+}
+
 const contactForm = document.querySelector("[data-contact-form]");
 contactForm?.addEventListener("submit", (event) => {
   event.preventDefault();
