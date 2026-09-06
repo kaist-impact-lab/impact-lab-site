@@ -49,7 +49,16 @@ if (headerTarget) {
           <span></span><span></span><span></span><b class="sr-only">Open menu</b>
         </button>
         <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
-          ${pages.map(([label, href]) => `<a href="${href}"${isActive(href) ? ' class="active" aria-current="page"' : ""}>${label}</a>`).join("")}
+          ${pages.map(([label, href]) => label === "Team" ? `
+            <div class="nav-dropdown">
+              <a class="nav-dropdown-trigger${isActive(href) ? " active" : ""}" href="people.html#members"${isActive(href) ? ' aria-current="page"' : ""} aria-haspopup="true">
+                <span>Team</span><span class="nav-chevron" aria-hidden="true">▾</span>
+              </a>
+              <div class="nav-submenu" aria-label="Team sections">
+                <a href="people.html#members" data-team-nav="members">Members</a>
+                <a href="people.html#alumni" data-team-nav="alumni">Alumni</a>
+              </div>
+            </div>` : `<a href="${href}"${isActive(href) ? ' class="active" aria-current="page"' : ""}>${label}</a>`).join("")}
         </nav>
       </div>
     </header>`;
@@ -162,6 +171,13 @@ if (teamTabs.length && teamPanels.length) {
 
     teamPanels.forEach((panel) => {
       panel.hidden = panel.dataset.teamPanel !== activeName;
+    });
+
+    document.querySelectorAll("[data-team-nav]").forEach((link) => {
+      const active = link.dataset.teamNav === activeName;
+      link.classList.toggle("current", active);
+      if (active) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
     });
 
     if (updateUrl) history.replaceState(null, "", `#${activeName}`);
