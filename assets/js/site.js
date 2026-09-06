@@ -205,5 +205,5 @@ contactForm?.addEventListener("submit", (event) => {
   const data = new FormData(contactForm);
   const subject = encodeURIComponent(`[IMPACT Lab inquiry] ${data.get("subject") || "Website inquiry"}`);
   const body = encodeURIComponent(`Name: ${data.get("name")}\nEmail: ${data.get("email")}\n\n${data.get("message")}`);
-  window.location.href = `mailto:si2131@kaist.ac.kr?subject=${subject}&body=${body}`;
+  window.location.href = `mailto:impact_lab@kaist.ac.kr?subject=${subject}&body=${body}`;
 });

@@ -292,6 +292,9 @@ h3 { margin-bottom: 14px; font-size: 20px; line-height: 1.4; }
 .contact-row { display: grid; grid-template-columns: 90px 1fr; gap: 20px; padding: 17px 0; border-bottom: 1px solid var(--line); }
 .contact-row strong { color: var(--forest-2); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
 .contact-row span, .contact-row a { font-size: 18px; }
+.contact-email-list, .contact-email-list a, .apply-links > span { display: block; }
+.contact-email-list .contact-email-secondary { margin-top: 3px; color: var(--muted); font-size: 15px; }
+.apply-links > span + span { margin-top: 4px; }
 .contact-form { padding: clamp(30px, 5vw, 54px); background: var(--white); box-shadow: var(--shadow); }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .field { display: grid; gap: 7px; margin-bottom: 18px; }
