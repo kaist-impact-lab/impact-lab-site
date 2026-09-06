@@ -238,14 +238,14 @@ h3 { margin-bottom: 14px; font-size: 20px; line-height: 1.4; }
 .linkedin-mini { display: inline-flex; width: 19px; height: 19px; margin-left: 6px; vertical-align: -3px; }
 .linkedin-mini img { width: 100%; height: 100%; }
 .list-person span { display: block; margin-top: 5px; color: var(--muted); font-size: 16px; text-align: left; }
-.alumni-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; }
-.alumni-card { min-width: 0; }
+.alumni-grid { display: grid; grid-template-columns: 1fr; gap: 0; border-top: 1px solid rgba(33,33,33,.18); }
+.alumni-card { min-width: 0; display: grid; grid-template-columns: minmax(230px, 300px) 1fr; gap: clamp(38px, 6vw, 78px); align-items: center; padding: 46px 0; border-bottom: 1px solid rgba(33,33,33,.18); }
 .alumni-image { overflow: hidden; background: #dfe5e1; }
-.alumni-image img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; filter: saturate(.9); transition: transform .4s, filter .4s; }
+.alumni-image img { width: 100%; aspect-ratio: 4 / 4.7; object-fit: cover; object-position: center top; filter: saturate(.9); transition: transform .4s, filter .4s; }
 .alumni-card:hover .alumni-image img { transform: scale(1.025); filter: saturate(1); }
-.alumni-info { padding-top: 18px; }
-.alumni-card h3 { margin: 0; font-size: 22px; font-weight: 500; line-height: 1.3; }
-.alumni-degree, .alumni-affiliation { display: block; color: var(--muted); font-size: 15px; line-height: 1.55; }
+.alumni-info { max-width: 760px; }
+.alumni-card h3 { margin: 0; font-size: 30px; font-weight: 500; line-height: 1.3; }
+.alumni-degree, .alumni-affiliation { display: block; color: var(--muted); font-size: 16px; line-height: 1.65; }
 .alumni-degree { margin-top: 10px; color: var(--forest-2); font-weight: 500; }
 .alumni-affiliation { margin-top: 3px; }
 
@@ -347,7 +347,6 @@ h3 { margin-bottom: 14px; font-size: 20px; line-height: 1.4; }
   .feature-grid, .pi-block { gap: 50px; }
   .people-grid { grid-template-columns: 1fr; }
   .person-card { grid-template-columns: 230px 1fr; gap: 40px; }
-  .alumni-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid > div:first-child { grid-column: 1 / -1; }
 }
@@ -397,7 +396,8 @@ h3 { margin-bottom: 14px; font-size: 20px; line-height: 1.4; }
   .pi-block { gap: 45px; }
   .pi-photo { max-width: 430px; }
   .people-grid, .people-list, .course-grid { grid-template-columns: 1fr; }
-  .alumni-grid { grid-template-columns: 1fr; }
+  .alumni-card { grid-template-columns: 1fr; gap: 25px; padding: 40px 0; }
+  .alumni-image { width: min(100%, 420px); }
   .person-card { grid-template-columns: 1fr; gap: 25px; padding: 40px 0; }
   .person-image { width: min(100%, 420px); }
   .publication-item { grid-template-columns: 60px 1fr; gap: 16px; }
