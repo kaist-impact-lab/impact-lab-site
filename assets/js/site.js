@@ -88,7 +88,10 @@ if (footerTarget) {
       </div>
       <div class="footer-bottom">
         <span>© ${new Date().getFullYear()} IMPACT Lab, KAIST</span>
-        <a class="footer-linkedin" href="https://www.linkedin.com/company/impact-lab-kaist/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a class="footer-linkedin" href="https://www.linkedin.com/company/impact-lab-kaist/" target="_blank" rel="noreferrer" aria-label="IMPACT Lab on LinkedIn">
+          <img src="assets/images/linkedin-icon.svg" alt="" aria-hidden="true">
+          <span>LinkedIn ↗</span>
+        </a>
       </div>
     </footer>`;
 }
