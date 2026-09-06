@@ -210,6 +210,7 @@ h3 { margin-bottom: 14px; font-size: 20px; line-height: 1.4; }
 .pi-copy p { color: #465550; }
 .profile-link { display: inline-flex; align-items: center; gap: 7px; margin-top: 24px; color: var(--forest); font-size: 12px; font-weight: 700; }
 .profile-link:hover { color: var(--forest-2); }
+.profile-link-icon { width: 20px; height: 20px; flex: none; }
 .profile-links { display: flex; flex-wrap: wrap; gap: 0 24px; }
 .team-profile .profile-link { font-size: 15px; }
 .people-heading { margin-bottom: 36px; }
@@ -225,15 +226,17 @@ h3 { margin-bottom: 14px; font-size: 20px; line-height: 1.4; }
 .person-info { max-width: 760px; }
 .person-name-line { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
 .person-card h3 { margin: 0 0 2px; font-family: var(--serif); font-size: 30px; font-weight: 500; }
-.linkedin-badge { flex: none; padding: 6px 9px; border: 1px solid rgba(33,33,33,.24); border-radius: 99px; color: var(--ink); font-size: 12px; font-weight: 700; letter-spacing: .02em; line-height: 1; }
-.linkedin-badge:hover { color: var(--white); background: var(--forest); border-color: var(--forest); }
+.linkedin-badge { width: 25px; height: 25px; flex: none; overflow: hidden; border-radius: 3px; transition: opacity .2s, transform .2s; }
+.linkedin-badge img { width: 100%; height: 100%; }
+.linkedin-badge:hover { opacity: .82; transform: translateY(-1px); }
 .person-role { display: block; margin-bottom: 13px; color: var(--forest-2); font-size: 16px; font-weight: 500; }
 .person-card p { margin: 17px 0 0; color: var(--muted); font-size: 16px; line-height: 1.75; }
 .people-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 70px; border-top: 1px solid var(--line); }
 .list-person { display: block; padding: 20px 0; border-bottom: 1px solid var(--line); }
 .list-person strong { font-size: 24px; font-weight: 400; }
 .list-person strong a:hover { color: var(--forest-2); }
-.linkedin-mini { margin-left: 5px; color: var(--forest-2); font-size: 11px; font-style: normal; text-transform: uppercase; }
+.linkedin-mini { display: inline-flex; width: 19px; height: 19px; margin-left: 6px; vertical-align: -3px; }
+.linkedin-mini img { width: 100%; height: 100%; }
 .list-person span { display: block; margin-top: 5px; color: var(--muted); font-size: 16px; text-align: left; }
 .alumni-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; }
 .alumni-card { min-width: 0; }
