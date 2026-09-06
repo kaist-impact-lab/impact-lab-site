@@ -156,8 +156,8 @@ document.querySelectorAll("[data-filter]").forEach((button) => {
 const teamTabs = [...document.querySelectorAll("[data-team-tab]")];
 const teamPanels = [...document.querySelectorAll("[data-team-panel]")];
 
-if (teamTabs.length && teamPanels.length) {
-  const validTeamTabs = new Set(teamTabs.map((tab) => tab.dataset.teamTab));
+if (teamPanels.length) {
+  const validTeamTabs = new Set(teamPanels.map((panel) => panel.dataset.teamPanel));
 
   const activateTeamTab = (name, updateUrl = false) => {
     const activeName = validTeamTabs.has(name) ? name : "members";
