@@ -235,6 +235,16 @@ h3 { margin-bottom: 14px; font-size: 20px; line-height: 1.4; }
 .list-person strong a:hover { color: var(--forest-2); }
 .linkedin-mini { margin-left: 5px; color: var(--forest-2); font-size: 11px; font-style: normal; text-transform: uppercase; }
 .list-person span { display: block; margin-top: 5px; color: var(--muted); font-size: 16px; text-align: left; }
+.alumni-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; }
+.alumni-card { min-width: 0; }
+.alumni-image { overflow: hidden; background: #dfe5e1; }
+.alumni-image img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; filter: saturate(.9); transition: transform .4s, filter .4s; }
+.alumni-card:hover .alumni-image img { transform: scale(1.025); filter: saturate(1); }
+.alumni-info { padding-top: 18px; }
+.alumni-card h3 { margin: 0; font-size: 22px; font-weight: 500; line-height: 1.3; }
+.alumni-degree, .alumni-affiliation { display: block; color: var(--muted); font-size: 15px; line-height: 1.55; }
+.alumni-degree { margin-top: 10px; color: var(--forest-2); font-weight: 500; }
+.alumni-affiliation { margin-top: 3px; }
 
 .filter-bar { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 42px; }
 .filter-button { padding: 12px 20px; border: 1px solid var(--line); border-radius: 99px; background: transparent; color: var(--muted); font-size: 16px; font-weight: 700; cursor: pointer; }
@@ -331,6 +341,7 @@ h3 { margin-bottom: 14px; font-size: 20px; line-height: 1.4; }
   .feature-grid, .pi-block { gap: 50px; }
   .people-grid { grid-template-columns: 1fr; }
   .person-card { grid-template-columns: 230px 1fr; gap: 40px; }
+  .alumni-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid > div:first-child { grid-column: 1 / -1; }
 }
@@ -380,6 +391,7 @@ h3 { margin-bottom: 14px; font-size: 20px; line-height: 1.4; }
   .pi-block { gap: 45px; }
   .pi-photo { max-width: 430px; }
   .people-grid, .people-list, .course-grid { grid-template-columns: 1fr; }
+  .alumni-grid { grid-template-columns: 1fr; }
   .person-card { grid-template-columns: 1fr; gap: 25px; padding: 40px 0; }
   .person-image { width: min(100%, 420px); }
   .publication-item { grid-template-columns: 60px 1fr; gap: 16px; }
